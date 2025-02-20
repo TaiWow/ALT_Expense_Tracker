@@ -16,8 +16,6 @@ AltSchool of Data Engineering Tinyuka 2024 First Semester Project Exam - The goa
 7. [Classes Overview](#classes-overview)
    - [Expense Class](#expense-class)
    - [ExpenseDatabase Class](#expensedatabase-class)
-8. [License](#license)
-9. [GitHub Repository](#github-repository)
 
 ---
 
