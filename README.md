@@ -6,48 +6,60 @@ AltSchool of Data Engineering Tinyuka 2024 First Semester Project Exam - The goa
 ## Table of Contents
 1. [Project Description](#project-description)
 2. [Features](#features)
-3. [How to Use](#how-to-use)
+3. [Project Structure](#project-structure)
+4. [How to Use](#how-to-use)
    - [Clone the Repository](#clone-the-repository)
    - [Install Dependencies](#install-dependencies)
    - [Run the Application](#run-the-application)
-4. [Project Structure](#project-structure)
 5. [CLI Commands](#cli-commands)
 6. [Example Usage](#example-usage)
 7. [Classes Overview](#classes-overview)
    - [Expense Class](#expense-class)
    - [ExpenseDatabase Class](#expensedatabase-class)
 
----
-
 ## Project Description
 
-This project is an **Expense Tracker** application designed to help users manage their financial expenses. The application allows users to add, update, remove, and view expenses. Expenses are stored in a database that can be saved to and loaded from **JSON** and **CSV** files. The project is implemented in Python and is structured into multiple modules for better organization and maintainability.
-
----
+This project is an Expense Tracker application designed to help users manage their financial expenses. The application allows users to add, update, remove and view expenses. Expenses are stored in a database that can be saved to and loaded from JSON and CSV files. The project is implemented in Python and is structured into multiple modules for better organization and maintainability.
 
 ## Features
-- **Expense Management**: Add, update, remove, and view expenses.
-- **Data Persistence**: Save and load expenses from **JSON** and **CSV** files.
-- **Search Functionality**: Retrieve expenses by **ID** or **title**.
-- **CLI Interface**: A simple command-line interface for managing expenses.
+- expense management for add, update, remove and view expenses.
+- Persistent storage using JSON and CSV formats
+- A simple command-line interface for managing expenses.
+-  Automatic tracking of creation and update times
+- Auto-generated unique identifiers for each expense
 
----
+## Project Structure
+
+The project is organized into the following files:
+
+- [`models.py`](models.py): Contains the `Expense` and `ExpenseDatabase` classes, which handle the core logic of expense management and data persistence.
+  - `Expense`: Represents individual expense entries with attributes id, title, amount,timestamps.
+  - `ExpenseDatabase`: Handles expense storage, retrieval, and file operations
+
+- [`main.py`](main.py): Example implementation showing basic functionality
+  - Demonstrates creating expenses
+  - Shows how to save/load data in different formats (JSON, CSV)
+  - Provides sample code for common operations
+
+- [`cli.py`](cli.py): Command-line interface for user interaction
+  - Add new expenses
+  - View existing expenses
+  - Export data to different formats
+  - Generate basic expense reports
 
 ## How to Use
 
-### Clone the Repository
+#### Clone the Repository
 ```bash
 git clone https://github.com/TaiWow/ALT_School_Expense_Tracker.git
 cd ALT_School_Expense_Tracker
 ```
-
-### Install Dependencies
-Install the `tabulate` library for pretty-printing tables:
+#### Install Dependencies
+- Install the `tabulate` library for pretty-printing tables:
 ```bash
-pip install tabulate
+pip install tabulate 
 ```
-
-### Run the Application
+#### Run the Application
 - Run the main script:
   ```bash
   python main.py
@@ -56,19 +68,6 @@ pip install tabulate
   ```bash
   python cli.py
   ```
-
----
-
-## Project Structure
-
-The project is organized into the following files:
-
-- **`models.py`**: Contains the `Expense` and `ExpenseDatabase` classes, which handle the core logic of expense management and data persistence.
-- **`main.py`**: Demonstrates the basic functionality of the application by creating a list of dummy expenses and saving/loading them from JSON and CSV files.
-- **`cli.py`**: Provides a command-line interface for interacting with the expense tracker.
-
----
-
 ## CLI Commands
 1. **Add Expense**: Enter title and amount.
 2. **Update Expense**: Enter ID and update title/amount.
@@ -76,8 +75,6 @@ The project is organized into the following files:
 4. **View All Expenses**: Display all expenses.
 5. **View Expenses by Title**: Search expenses by title.
 6. **Exit**: Exit the application.
-
----
 
 ## Example Usage
 
@@ -88,7 +85,6 @@ Enter the expense title: Coffee
 Enter the expense amount: 3.5
 Expense added: {'id': 'abc12', 'title': 'Coffee', 'amount': 3.5, 'created_at': '2025-02-19T22:06:06.188644+00:00', 'updated_at': '2025-02-19T22:06:06.188644+00:00'}
 ```
-
 ### Update an Expense
 ```bash
 Enter your choice: 2
@@ -97,7 +93,6 @@ Enter new title (current: Coffee): Latte
 Enter new amount (current: 3.5): 4.0
 Expense updated: {'id': 'abc12', 'title': 'Latte', 'amount': 4.0, 'created_at': '2025-02-19T22:06:06.188644+00:00', 'updated_at': '2025-02-19T22:06:06.188644+00:00'}
 ```
-
 ### View All Expenses
 ```bash
 Enter your choice: 4
@@ -117,9 +112,6 @@ Enter your choice: 4
 | 2abe7 | Potatoes |  1.8   | 2025-02-19T22:06:06.188904 | 2025-02-19T22:06:06.188904 |
 +-------+----------+--------+----------------------------+----------------------------+
 ```
-
----
-
 ## Classes Overview
 
 ### Expense Class
@@ -147,5 +139,9 @@ Manages a collection of `Expense` objects.
 - `save_to_csv()`: Save expenses to a CSV file.
 - `load_from_csv()`: Load expenses from a CSV file.
 
----
+
+
+
+
+
 
